@@ -1,0 +1,32 @@
+::ng-deep .mat-horizontal-stepper-header-container{
+    background-color: #f2f2f2;
+  }
+
+  ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit, .mat-horizontal-stepper-header, .mat-step-icon  {
+      background-color: transparent !important;
+      color: rgba(0,0,0,.87);
+      display: none;
+  }
+
+  ::ng-deep .mat-stepper-horizontal-line {
+      display: none;
+  }
+
+  ::ng-deep .mat-step-icon, .mat-step-icon-state-number {
+display: none;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+::ng-deep .mat-horizontal-content-container {
+      background-color: #f2f2fa;
+  }
+
+  .mat-icon{
+    vertical-align: bottom;
+        background-color: #f2f2f2;
+        border-radius: 50%;
+        margin-right: .2em;
+    }

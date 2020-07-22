@@ -1,0 +1,193 @@
+
+<div class="add-role" style="background-color: #f2f2fa;  min-height: 90vh;">
+  
+  <div class="row" style="margin: 0; padding: 1% 2%; background-color: #fff;">
+      <span class="h6">Add Role</span>
+      <span class="text-right ml-auto">
+          <button mat-button class="px-2">Cancel</button>
+          <button class="px-2" mat-flat-button color="primary">Create</button>
+      </span>
+  </div>
+  
+
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <div class="col-md-4 mx-auto pt-3">
+   
+      <form [formGroup]="firstFormGroup">
+    
+        <h3 class="primary">1. Add Role Name</h3>
+        <mat-card>
+        <ng-template matStepLabel>1. Add Role</ng-template>
+        <ng-container>
+          <ngx-avatar class="role-avatar" [round]="true" name="Not Applicable"></ngx-avatar>
+          </ng-container>
+        <mat-form-field class="pt-2">
+          
+          <mat-label>Role Name</mat-label>
+          <input (keyup.enter)="getRole()" matInput formControlName="firstCtrl" placeholder="Enter Role name" required>
+        </mat-form-field>
+        <br>
+        <mat-slide-toggle>Active</mat-slide-toggle>
+        
+      </mat-card>
+
+      <div class="text-right pt-4">
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+      </form>
+    
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <div class="col-md-4 mx-auto pt-5">
+      <form [formGroup]="secondFormGroup">
+        <h3 class="primary">1. Add Access Points</h3>
+        <mat-card>
+        <ng-template matStepLabel>2. Add Access Points</ng-template>
+
+        <table class="table table-borderless bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Web</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Home</td>
+            <td><input type="checkbox" formControlName = "hasHomeAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasHomeAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Trips</td>
+            <td><input type="checkbox" formControlName = "hasTripsAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasTripsAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Past Trips</td>
+            <td><input type="checkbox" formControlName = "hasPastTripsAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasPastTripsAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Create a Trip</td>
+            <td><input type="checkbox" formControlName = "hasCreateTripsAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasCreateTripsAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Alerts</td>
+            <td><input type="checkbox" formControlName = "hasAlertAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasAlertAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Alert Management</td>
+            <td><input type="checkbox" formControlName = "hasAlertManagementAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasAlertManagementAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Sensors</td>
+            <td><input type="checkbox" formControlName = "hasSensorsAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasSensorsAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Add Sensors</td>
+            <td><input type="checkbox" formControlName = "hasAddSensorsAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasAddSensorsAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Routes</td>
+            <td><input type="checkbox" formControlName = "hasRoutesAcess" required></td>
+            <td><input type="checkbox" formControlName = "hasRoutesAcess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Add Routes Access</td>
+            <td><input type="checkbox" formControlName = "hasSAddRoutesAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasSAddRoutesAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Users</td>
+            <td><input type="checkbox" formControlName = "hasUsersAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasUsersAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Users</td>
+            <td><input type="checkbox" formControlName = "hasAddUserAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasAddUserAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Dashboard</td>
+            <td><input type="checkbox" formControlName = "hasDashboardAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasDashboardAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Reports</td>
+            <td><input type="checkbox" formControlName = "hasReportAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasReportAccess" required></td>
+            
+          </tr>
+
+          <tr>
+            <td scope="row"> <mat-icon>home</mat-icon> Settings</td>
+            <td><input type="checkbox" formControlName = "hasRoleSettingsAccess" required></td>
+            <td><input type="checkbox" formControlName = "hasRoleSettingsAccess" required></td>
+            
+          </tr>
+        </tbody>
+
+        </table>
+        
+        <!-- <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field> -->
+        </mat-card>
+        <div class="row pt-5">
+          <div class="col-sm-6 text-left">
+          <button class="pr-2" mat-stroked-button matStepperPrevious>Back</button>
+          </div>
+          <div class="col-sm-6 text-right">
+          <button mat-flat-button color="primary" matStepperNext (click)="addRole()" >Next</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </mat-step>
+    <!-- <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step> -->
+    </mat-horizontal-stepper>
+    </div>

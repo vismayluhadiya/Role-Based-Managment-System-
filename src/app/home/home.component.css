@@ -1,0 +1,25 @@
+#home {
+    min-height: 90vh;
+}
+
+.search-button {
+    border-radius: 20px;
+    color: #666;
+    margin: 2% 0;
+}
+
+.role-avatar /deep/ .avatar-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mat-icon{
+vertical-align: bottom;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    margin-right: .2em;
+}
+
+.table {
+    border-radius: 20px;
+}

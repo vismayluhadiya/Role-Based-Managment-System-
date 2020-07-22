@@ -1,0 +1,183 @@
+﻿<!-- <div class="card mt-4">
+    <h4 class="card-header">Home</h4>
+    <div class="card-body">
+        <p>You're logged in with Angular 9 & JWT!!</p>
+        <p>Your role is: <strong>{{user.role}}</strong>.</p>
+        <p>This page can be accessed by <u>all authenticated users</u>.</p>
+        <p class="mb-1">Current user from secure api end point:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+            <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+        </ul>
+    </div>
+</div> -->
+
+<div id="home" style="background-color: #f2f2fa;">
+<div class="container">
+    <div class="row">
+    <div class="col-md-12 pt-2 mx-auto">
+        <div class="row py-3">
+        <div class="col-md-6 text-left"> Active User Roles
+            <br>
+            Total of <span class="font-weight: 600">{{usersFromApi?.length}}</span> Roles
+            <!-- <mat-select> 
+                <mat-option value="option">Option</mat-option>
+              </mat-select> -->
+            </div>
+
+        <div class="col-md-6 ml-auto text-right" *ngIf="isUserAdmin">
+             <button routerLink="/add-role" mat-stroked-button color="primary"> <i class="fas fa-plus"></i> Add New Role</button></div>
+
+        </div>
+        <button mat-raised-button class="w-25 text-left search-button"><i class="fas fa-search pr-2"></i> Search</button>
+
+       <div class="row">
+           <ng-container *ngFor="let user of usersFromApi">
+            <div class="col-md-2">
+               <mat-card>
+                   <mat-card-content class="text-center mx-auto">
+
+                    <ngx-avatar class="role-avatar" [round]="true" name="{{user.roleData.userRole}}"></ngx-avatar>
+                       <h4 class="pt-2"><span style="font-weight: bold;">{{user.roleData.userRole}}</span> <br>
+                       24 Access Points</h4>
+
+                       <mat-slide-toggle [checked]="user.roleData.hasHomeAcess" >Active</mat-slide-toggle>
+                   </mat-card-content>
+               </mat-card>
+           </div>
+           </ng-container>
+
+          
+          
+       </div>
+
+       <div class="user-data pt-4">
+       <h4>All User Access</h4>
+
+       <table class="table table-borderless bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col">Description</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <th scope="col">{{user.roleData.userRole}}</th>
+          </ng-container>
+        
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Home</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasHomeAcess" /></td>
+            </ng-container>
+          </tr>
+          
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Trips</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasTripsAcess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Past Trips</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasPastTripsAcess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Create a Trip</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasCreateTripsAccess" /></td>
+            </ng-container>
+          </tr>
+          
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Alerts</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasAlertAcess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Alert Management</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasAlertManagementAcess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Sensors</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasSensorsAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Add Sensors</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasAddSensorsAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Routes</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasRoutesAcess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Add Routes</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasSAddRoutesAccess" /></td>
+            </ng-container>
+          </tr>
+
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Users</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasUsersAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Add Users</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasAddUserAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Dashboard</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasDashboardAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Report</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasReportAccess" /></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <th scope="row"> <mat-icon>home</mat-icon> Settings</th>
+            <ng-container *ngFor="let user of usersFromApi">
+            <td> <input type="checkbox" disabled [checked]="user.roleData.hasRoleSettingsAccess" /></td>
+            </ng-container>
+          </tr>
+
+        </tbody>
+        </table>
+
+
+       </div>
+        </div>
+    </div>
+</div>
+</div>
