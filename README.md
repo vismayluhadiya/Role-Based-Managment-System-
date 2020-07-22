@@ -12,15 +12,14 @@ Here are the main project files that contain the application logic, I left out s
 
 ## Screenshots
 
-[url=https://postimg.cc/871Swhnm][img]https://i.postimg.cc/871Swhnm/localhost-4200-4.png[/img][/url]
+https://postimg.cc/871Swhnm https://i.postimg.cc/871Swhnm/localhost-4200-4.png
+https://postimg.cc/nMDpLVDB https://i.postimg.cc/nMDpLVDB/localhost-4200-add-role.png
 
-[url=https://postimg.cc/nMDpLVDB][img]https://i.postimg.cc/nMDpLVDB/localhost-4200-add-role.png[/img][/url]
+https://postimg.cc/SJL4WZVK https://i.postimg.cc/SJL4WZVK/localhost-4200-add-role-1.png
 
-[url=https://postimg.cc/SJL4WZVK][img]https://i.postimg.cc/SJL4WZVK/localhost-4200-add-role-1.png[/img][/url]
+https://postimg.cc/wytHLgbK https://i.postimg.cc/wytHLgbK/localhost-4200-add-role-2.png
 
-[url=https://postimg.cc/wytHLgbK][img]https://i.postimg.cc/wytHLgbK/localhost-4200-add-role-2.png[/img][/url]
-
-[url=https://postimg.cc/JHZLYKLP][img]https://i.postimg.cc/JHZLYKLP/localhost-4200-login.png[/img][/url]
+https://postimg.cc/JHZLYKLP https://i.postimg.cc/JHZLYKLP/localhost-4200-login.png
 
 ## Development server
 
